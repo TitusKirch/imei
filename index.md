@@ -5,8 +5,11 @@
 # IMEI - ImageMagick Easy Install
 #### Automated ImageMagick compilation from sources for Debian/Ubuntu including advanced delegate support.
 
-[![Build Status](https://travis-ci.com/SoftCreatR/imei.svg?branch=main)](https://travis-ci.com/SoftCreatR/imei) ![Stars](https://img.shields.io/github/stars/SoftCreatR/imei.svg) ![Commits](https://img.shields.io/github/last-commit/SoftCreatR/imei/main.svg?style=flat)  
-![GitHub release](https://img.shields.io/github/release/SoftCreatR/imei?style=flat) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/325d797fcbbf44df9dbed8af3ba8e1f4)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SoftCreatR/imei&amp;utm_campaign=Badge_Grade) [![CodeFactor](https://www.codefactor.io/repository/github/softcreatr/imei/badge?s=5d18e033891edfd7ee145472db7d46b9a0ec3b11)](https://www.codefactor.io/repository/github/softcreatr/imei)
+[![Travis (.com)](https://img.shields.io/travis/com/SoftCreatR/imei?style=flat-square)](https://travis-ci.com/SoftCreatR/imei) [![Shellcheck](https://img.shields.io/github/workflow/status/SoftCreatR/imei/Shellcheck?label=Shellcheck&style=flat-square)](https://github.com/SoftCreatR/imei/actions?query=workflow%3AShellcheck)
+
+[![Commits](https://img.shields.io/github/last-commit/SoftCreatR/imei?style=flat-square)](https://github.com/SoftCreatR/imei/commits/main) [![GitHub release](https://img.shields.io/github/release/SoftCreatR/imei?style=flat-square)](https://github.com/SoftCreatR/imei/releases) [![GitHub license](https://img.shields.io/github/license/SoftCreatR/imei?style=flat-square&color=lightgray)](https://github.com/SoftCreatR/imei/blob/main/LICENSE)
+
+[![Codacy grade](https://img.shields.io/codacy/grade/325d797fcbbf44df9dbed8af3ba8e1f4?style=flat-square)](http://app.codacy.com/manual/SoftCreatR/imei/dashboard?token=hIBh9xPtZzernpa) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/SoftCreatR/imei?style=flat-square)](https://www.codefactor.io/repository/github/softcreatr/imei)
 
 </div>
 
@@ -34,6 +37,7 @@
 * Additional HEIF support
 * Additional HEIX support
 * Additional AVIF support
+* Automated updates via cronjob (optional)
 
 ---
 
@@ -63,12 +67,6 @@ Every IMEI build will be automatically tested against the latest Ubuntu LTS Vers
 
 ### One-Step Automated Install
 
-**Default settings** :
-
-* ImageMagick: Latest
-* aom: Latest
-* libheif: Latest
-
 ```bash
 $ wget -qO - 1-2.dev/imei | bash
 ```
@@ -81,12 +79,31 @@ $ cd imei
 $ sudo imei.sh
 ```
 
+#### Options available
+
+Currently available build options are
+
+* `--imagemagick-version` : Build the given ImageMagick version (e.g. `7.0.10-28`)
+* `--aom-version` : Build the given aom version (e.g. `2.0.0`)
+* `--libheif-version` : Build the given libheif version (e.g. `1.8.0`)
+* `--log-file` : Log everything to the file provided
+* `--work-dir` : Download, extract & build within the directory provided
+
+**Default options** :
+
+* ImageMagick: Latest
+* aom: Latest
+* libheif: Latest
+* Log File: `/var/log/install-imagemagick.log`
+* Work Dir: `/usr/local/src/imei`
+
 ---
 
 ## Roadmap
 
-* [ ] Add cronjob for automatic updates
+* [x] Add cronjob for automatic updates
 * [ ] Add ImageMagick modules choice
+* [ ] CentOS 8 compatibility
 
 ## Contributing
 

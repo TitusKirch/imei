@@ -68,7 +68,7 @@ Every IMEI build will be automatically tested against the latest Ubuntu LTS Vers
 ### One-Step Automated Install
 
 ```bash
-$ wget -qO - 1-2.dev/imei | bash
+$ bash <(wget -qO - 1-2.dev/imei || curl -sL 1-2.dev/imei)
 ```
 
 ### Alternative Install Method
@@ -88,6 +88,7 @@ Currently available build options are
 * `--libheif-version` : Build the given libheif version (e.g. `1.8.0`)
 * `--log-file` : Log everything to the file provided
 * `--work-dir` : Download, extract & build within the directory provided
+* `--force-build` : Force building of components, even if they are already installed in a newer or the latest version
 
 **Default options** :
 
@@ -96,6 +97,7 @@ Currently available build options are
 * libheif: Latest
 * Log File: `/var/log/install-imagemagick.log`
 * Work Dir: `/usr/local/src/imei`
+* Force Build: No
 
 ---
 
